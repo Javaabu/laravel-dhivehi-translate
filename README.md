@@ -20,42 +20,42 @@ composer require javaabu/laravel-dhivehi-translate
 After updating composer, add the ServiceProvider to the providers array in config/app.php
 
 ``` bash
-Javaabu\LaravelDhivehiTranslate\Providers\LaravelDhivehiTranslateServiceProvider::class,
+Javaabu\LaravelDhivehiTranslate\LaravelDhivehiTranslateServiceProvider::class,
 ```
 
+### Publish config files
 
-### Add configuration to `config/services.php`
+This package essentially creates a Microsoft Translator driver for [tanmuhittin/laravel-google-translate](https://github.com/tanmuhittin/laravel-google-translate) package using the [InputOutputZ/ATran](https://github.com/InputOutputZ/ATran) package.
+So this package will publish modified versions of config files from those packages named `atran.php` and `laravel_google_translate.php`.
 
-```php
-'efaas' => [    
-    'client_id' => env('EFAAS_CLIENT_ID'),  
-    'client_secret' => env('EFAAS_CLIENT_SECRET'),  
-    'redirect' => env('EFAAS_REDIRECT_URI'),
-    'mode' => env('EFAAS_MODE', 'development'), // supports production, development            
-],
+```bash
+php artisan vendor:publish --force --provider="Javaabu\LaravelDhivehiTranslate\LaravelDhivehiTranslateServiceProvider"
+```
+
+### Add Microsoft Azure Translation API Key to .env
+
+```dotenv
+AZURETRAN_KEY=xxxxxxxxxxxxxx
 ```
 
 ### Usage
 
-**Note:** A demo implementation of this package is available [here](https://github.com/ncit-devs/Efaas-Implementation-Javaabu).
+Then you can run
 
-You should now be able to use the provider like you would regularly use Socialite (assuming you have the facade installed):
-Refer to the [Official Social Docs](https://laravel.com/docs/8.x/socialite#routing) for more info.
-
-**Warning:** If you get `403 Forbidden` error when your Laravel app makes requests to the eFaas authorization endpoints, request NCIT to whitelist your server IP.
-
-```php
-return Socialite::driver('efaas')->redirect();
+```bash
+php artisan translate:files
 ```
 
-and in your callback handler, you can access the user data like so.
+See it on action:<br>
 
-```
-$efaas_user = Socialite::driver('efaas')->user();
-$access_token = $efaas_user->token;
-```
+<img src="http://muhittintan.com/tanmuhittin-laravel-google-translate.gif" alt="laravel-google-translate" />
 
-  
+## Str facade api-translation helpers
+
+This package provides two translation methods for Laravel helper Str
+* `Illuminate\Support\Str::apiTranslate` -> Translates texts using your selected api in config
+* `Illuminate\Support\Str::apiTranslateWithAttributes` -> Again translates texts using your selected api in config
+  in addition to that this function ***respects Laravel translation text attributes*** like :name  
 
 ### Testing
 

@@ -3,7 +3,7 @@
 namespace Javaabu\LaravelDhivehiTranslate\Tests;
 
 use Orchestra\Testbench\TestCase;
-use Javaabu\LaravelDhivehiTranslate\Providers\LaravelDhivehiTranslateServiceProvider;
+use Javaabu\LaravelDhivehiTranslate\LaravelDhivehiTranslateServiceProvider;
 
 class ExampleTest extends TestCase
 {
