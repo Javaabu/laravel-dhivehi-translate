@@ -79,7 +79,7 @@ If you discover any security related issues, please email info@javaabu.com inste
 
 - [Javaabu Pvt. Ltd.](https://github.com/javaabu)
 - [Mohamed Jailam](http://github.com/muhammedjailam)
-- - [Arushad Ahmed (@dash8x)](http://arushad.org)
+- [Arushad Ahmed (@dash8x)](http://arushad.org)
 - [All Contributors](../../contributors)
 
 ## License
