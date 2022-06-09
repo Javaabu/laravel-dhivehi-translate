@@ -38,6 +38,8 @@ php artisan vendor:publish --force --provider="Javaabu\LaravelDhivehiTranslate\L
 AZURETRAN_KEY=xxxxxxxxxxxxxx
 ```
 
+Follow this [link](https://docs.microsoft.com/en-us/learn/modules/control-authentication-with-apim/1-introduction) to get API key.
+
 ### Usage
 
 Then you can run
