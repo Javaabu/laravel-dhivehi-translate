@@ -2,7 +2,6 @@
 
 namespace Javaabu\LaravelDhivehiTranslate\Api;
 
-use ATran\Translate\ATran;
 use Tanmuhittin\LaravelGoogleTranslate\Contracts\ApiTranslatorContract;
 
 class MicrosoftApiTranslate implements ApiTranslatorContract
